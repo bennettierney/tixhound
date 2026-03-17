@@ -48,13 +48,16 @@ export async function GET(req: NextRequest) {
   const errors: string[] = []
 
   for (const search of SEARCHES) {
+    // TM requires format: 2026-03-17T00:00:00Z (no milliseconds)
+    const startDateTime = new Date().toISOString().split('.')[0] + 'Z'
+
     const params = new URLSearchParams({
       apikey: TM_KEY,
       keyword: search.keyword,
       countryCode: 'US',
       size: '5',
       sort: 'relevance,desc',
-      startDateTime: new Date().toISOString().replace('.000', ''),
+      startDateTime,
     })
 
     try {
