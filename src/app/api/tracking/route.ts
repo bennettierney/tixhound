@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 
-const schema = z.object({ eventId: z.string().uuid() })
+const schema = z.object({ eventId: z.string().min(1) })
 
 export async function POST(req: NextRequest) {
   const supabase = await createClient()

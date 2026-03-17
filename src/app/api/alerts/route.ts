@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 
 const createSchema = z.object({
-  eventId: z.string().uuid(),
+  eventId: z.string().min(1),
   targetPrice: z.number().positive(),
   condition: z.enum(['below', 'above', 'any_change']).default('below'),
-  platformId: z.string().uuid().optional(),
+  platformId: z.string().min(1).optional(),
   sectionFilter: z.string().optional(),
 })
 
