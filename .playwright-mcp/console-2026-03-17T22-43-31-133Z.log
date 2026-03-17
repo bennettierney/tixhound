@@ -1,0 +1,1 @@
+[   25260ms] [WARNING] @supabase/gotrue-js: Lock "lock:sb-mgsrguepjhkdhfqhmgjj-auth-token" was not released within 5000ms. This may indicate an orphaned lock from a component unmount (e.g., React Strict Mode). Forcefully acquiring the lock to recover. @ http://localhost:3000/_next/static/chunks/7f2f7_next_dist_e5e6d6e9._.js:2297
